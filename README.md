@@ -2,7 +2,7 @@
 # There is nothing extra needed to run this application, here are all the APIs that were created:
 # Player: 
 #   http://localhost:8080/players?teamId={teamId} // lists all players
-   http://localhost:8080/player?teamId={teamId} // add a player \n
+#   http://localhost:8080/player?teamId={teamId} // add a player 
       requestBody: {
         "age": 28,
         "weight": 188,
