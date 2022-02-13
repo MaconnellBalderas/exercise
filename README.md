@@ -3,7 +3,7 @@
 # Player: 
 #   http://localhost:8080/players?teamId={teamId} // lists all players
 #   http://localhost:8080/player?teamId={teamId} // add a player
-#      requestBody: {
+      requestBody: {
         "age": 28,
         "weight": 188,
         "firstName": "John",
@@ -20,7 +20,7 @@
         "city": "Mississippi"
       }
 #   http://localhost:8080/team // add a team
-#      requestBody: {
+      requestBody: {
         "city": "Dallas", 
         "division": "Central",
         "mascot": "Eagle"
