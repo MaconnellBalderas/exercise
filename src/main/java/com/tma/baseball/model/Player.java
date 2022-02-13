@@ -48,6 +48,13 @@ public class Player {
         this.fullName = firstName + " " + lastName;
     }
 
+    public String getFullName() {
+        if(this.fullName == null) {
+            postLoad();
+        }
+        return fullName;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

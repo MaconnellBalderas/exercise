@@ -52,7 +52,7 @@ public class PlayerService {
         if(player.getWeight() == null) {
             throw new BaseballException("Please provide a weight for the player");
         }
-        playerRepo.save(player);
+        player = playerRepo.save(player);
         selectedTeam.addPlayer(player);
         teamRepo.save(selectedTeam);
         return player;
