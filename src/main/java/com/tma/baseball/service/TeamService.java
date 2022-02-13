@@ -18,19 +18,19 @@ public class TeamService {
 
     public List<Team> getAllTeams(String city, String mascot, String division) {
         if(city != null && mascot != null && division == null) {
-            return teamRepo.findByCityAndMascot(city, mascot);
-        } else if(city != null && division != null && mascot != null) {
-            return teamRepo.findByCityAndDivision(city, division);
+            return teamRepo.findByCityIgnoreCaseAndMascotIgnoreCase(city, mascot);
+        } else if(city != null && division != null && mascot == null) {
+            return teamRepo.findByCityIgnoreCaseAndDivisionIgnoreCase(city, division);
         } else if(mascot != null && division != null && city == null) {
-            return teamRepo.findByMascotAndDivision(mascot, division);
+            return teamRepo.findByMascotIgnoreCaseAndDivisionIgnoreCase(mascot, division);
         } else if(city != null && mascot != null && division != null) {
-            return teamRepo.findByCityAndMascotAndDivision(city, mascot, division);
+            return teamRepo.findByCityIgnoreCaseAndMascotIgnoreCaseAndDivisionIgnoreCase(city, mascot, division);
         } else if(city != null && mascot == null && division == null)  {
-            return teamRepo.findByCity(city);
+            return teamRepo.findByCityIgnoreCase(city);
         } else if(mascot != null && city == null && division == null) {
-            return teamRepo.findByMascot(mascot);
+            return teamRepo.findByMascotIgnoreCase(mascot);
         } else if(division != null && city == null && mascot == null) {
-            return teamRepo.findByDivision(division);
+            return teamRepo.findByDivisionIgnoreCase(division);
         }
         return teamRepo.findAll();
     }
@@ -62,7 +62,7 @@ public class TeamService {
     }
 
     public Team addTeam(Team team) {
-        Team selectedTeam = teamRepo.findByName(team.getName());
+        Team selectedTeam = teamRepo.findByNameIgnoreCase(team.getName());
         if(selectedTeam != null) {
             throw new BaseballException("Team Already Exists");
         }

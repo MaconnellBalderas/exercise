@@ -7,21 +7,20 @@ import java.util.List;
 
 public interface TeamRepo extends JpaRepository<Team, Long> {
 
-    List<Team> findByCityAndMascot(String city, String mascot);
+    List<Team> findByCityIgnoreCaseAndMascotIgnoreCase(String city, String mascot);
 
-    List<Team> findByCityAndDivision(String city, String division);
+    List<Team> findByCityIgnoreCaseAndDivisionIgnoreCase(String city, String division);
 
-    List<Team> findByMascotAndDivision(String mascot, String division);
+    List<Team> findByMascotIgnoreCaseAndDivisionIgnoreCase(String mascot, String division);
 
-    List<Team> findByCityAndMascotAndDivision(String city, String mascot, String division);
+    List<Team> findByCityIgnoreCaseAndMascotIgnoreCaseAndDivisionIgnoreCase(String city, String mascot, String division);
 
-    List<Team> findByCity(String city);
+    List<Team> findByCityIgnoreCase(String city);
 
-    List<Team> findByMascot(String mascot);
+    List<Team> findByMascotIgnoreCase(String mascot);
 
-    List<Team> findByDivision(String division);
+    List<Team> findByDivisionIgnoreCase(String division);
 
     Team findByNameIgnoreCase(String name);
 
-    Team findByName(String name);
 }
